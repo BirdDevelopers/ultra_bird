@@ -4,6 +4,7 @@ CWD=$(pwd)
 
 mkdir ../tmp/tex
 cp * ../tmp/tex
+cp -r ../doc_compiled/drawings ../tmp/tex
 cd ../tmp/tex
 
 #Compile all files
