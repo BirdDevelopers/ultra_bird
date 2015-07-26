@@ -105,9 +105,11 @@
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
     <ListValues>
+      <Value>../../../../src/modules</Value>
       <Value>../../../../src/include/avr-stl</Value>
       <Value>../../../../src/include/nanopb</Value>
       <Value>../../../generated_files</Value>
+      <Value>../../../../src/include/avrlib</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
@@ -124,9 +126,11 @@
   </avrgcccpp.compiler.symbols.DefSymbols>
   <avrgcccpp.compiler.directories.IncludePaths>
     <ListValues>
+      <Value>../../../../src/modules</Value>
       <Value>../../../../src/include/avr-stl</Value>
       <Value>../../../../src/include/nanopb</Value>
       <Value>../../../generated_files</Value>
+      <Value>../../../../src/include/avrlib</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
@@ -144,6 +148,14 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="D:\Projects\ultra_bird\src\include\avrlib\i2c.h">
+      <SubType>compile</SubType>
+      <Link>i2c.h</Link>
+    </Compile>
+    <Compile Include="D:\Projects\ultra_bird\src\include\avrlib\i2c.c">
+      <SubType>compile</SubType>
+      <Link>i2c.c</Link>
+    </Compile>
     <Compile Include="D:\Projects\ultra_bird\src\modules\chassis_main.cpp">
       <SubType>compile</SubType>
       <Link>chassis_main.cpp</Link>
@@ -180,6 +192,17 @@
       <SubType>compile</SubType>
       <Link>chassis.pb.c</Link>
     </Compile>
+    <Compile Include="D:\Projects\ultra_bird\src\modules\drivers\pca9685_driver.h">
+      <SubType>compile</SubType>
+      <Link>pca9685_driver.h</Link>
+    </Compile>
+    <Compile Include="D:\Projects\ultra_bird\src\modules\drivers\pca9685_driver.cpp">
+      <SubType>compile</SubType>
+      <Link>pca9685_driver.cpp</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="drivers" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

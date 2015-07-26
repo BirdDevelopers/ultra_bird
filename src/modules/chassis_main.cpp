@@ -7,8 +7,15 @@
 
 #include "led_driver.h"
 #include "brain_module.h"
+#include "drivers/pca9685_driver.h"
 #include <avr/io.h>
 #include "chassis.pb.h"
+#include "global.h"
+
+extern "C" {
+	#include <i2c.h>
+}
+
 
 class chassis_module : public brain_module
 {
@@ -17,13 +24,27 @@ public:
 	chassis_module()
 		:m_ledMode(2, 8)
 	{
-		register_led(m_ledMode);
+		register_led(m_ledMode);		
+		set_mode(mode_t::normal);
+	}
+	
+	error_t init()
+	{
+		sei();
+		i2cInit();
 		
 		//Initialize PWM driver
+		auto res = m_pwmDriver.init(0);
+		if(!res.is_ok())
+		{
+			set_status(brain_module::status_t::critical_error);
+			return error_t(1);
+		}
 		
 		//Initialize ADC
 		
-		set_mode(mode_t::direct);
+		set_status(brain_module::status_t::normal);
+		return error_t::ok();
 	}
 	
 	void set_mode(mode_t new_mode)
@@ -80,16 +101,12 @@ public:
 private:
 	led_driver m_ledMode;
 	mode_t m_mode;
+	pca9685_driver m_pwmDriver;
 };
 	
 int main(void)
 {
-	sei();
-	
 	chassis_module chs;
-	chs.set_status(brain_module::status_t::error);
-	
-	
-	
+	chs.init();		
 	chs.run();
 }
