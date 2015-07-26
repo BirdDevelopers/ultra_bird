@@ -1,0 +1,1 @@
+"../tools/nanopb_win32/protoc.exe" --nanopb_out=./generated_files -I="../src/modules" "../src/modules/chassis.proto"

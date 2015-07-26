@@ -1,0 +1,18 @@
+// Used in chassis module for cbidirectional commmunication
+
+enum command_id{
+	GET_STATUS = 0;
+	SET_SINGLE_OUTPUT = 1;
+	SET_ALL_OUTPUTS = 2;
+	GET_SINGLE_INPUT = 3;
+	GET_ALL_INPUTS = 4;
+}
+
+message request_m {
+	required command_id cmd_id = 1;
+    repeated float out_vals = 2;
+}
+message response_m {
+	required uint32 error_code = 1;
+    repeated float in_vals = 2;
+}
