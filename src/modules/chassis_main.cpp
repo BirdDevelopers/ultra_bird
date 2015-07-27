@@ -33,8 +33,8 @@ public:
 		sei();
 		i2cInit();
 		
-		//Initialize PWM driver
-		auto res = m_pwmDriver.init(0);
+		//Initialize PWM driver		
+		auto res = m_pwmDriver.init(0x80);
 		if(!res.is_ok())
 		{
 			set_status(brain_module::status_t::critical_error);
@@ -44,6 +44,10 @@ public:
 		//Initialize ADC
 		
 		set_status(brain_module::status_t::normal);
+		
+		m_pwmDriver.set_channel(0, 1.0f);
+		m_pwmDriver.set_channel(1, 1.0f);
+		
 		return error_t::ok();
 	}
 	
@@ -79,8 +83,11 @@ public:
 		switch(msg.cmd_id)
 		{
 			case command_id_SET_SINGLE_OUTPUT:
+			{
+				//auto err = m_pwmDriver.set_channel(msg.out_vals())
 				res.error_code = 1;
 				break;
+			}
 			case command_id_SET_ALL_OUTPUTS:
 				res.error_code = 1;
 				break;
@@ -101,12 +108,13 @@ public:
 private:
 	led_driver m_ledMode;
 	mode_t m_mode;
-	pca9685_driver m_pwmDriver;
+	pwm_driver m_pwmDriver;
 };
 	
 int main(void)
 {
 	chassis_module chs;
-	chs.init();		
+	chs.init();
+	
 	chs.run();
 }

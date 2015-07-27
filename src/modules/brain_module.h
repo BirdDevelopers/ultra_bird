@@ -22,7 +22,7 @@ public:
 	{
 		p_sharedTimer = this;
 		TCNT0 = 0x00;	// set timer0 counter initial value to 0
-		TCCR0 |= ((1 << CS00) | (1 << CS02));	// start timer0 with /1024 prescaler
+		TCCR0 |= ((1 << CS00) | (1 << CS02));	// start timer0 with /1024 prescaler  
 		TIMSK |= (1 << TOIE0) ; // setup timer 0 to interrupt on overflow		
 	}
 	

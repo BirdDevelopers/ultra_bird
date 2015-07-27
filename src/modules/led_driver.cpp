@@ -37,7 +37,7 @@ void led_driver::process_timer_signal()
 	m_blinkCounter = (++m_blinkCounter) % m_loopFrameCount;
 	
 	if(m_blinkCounter == 0)
-	set();
-	else if(m_blinkCounter == (m_mode == mode_t::blink ? 1 : m_loopFrameCount / 2))
-	reset();
+		set();
+	else if(m_blinkCounter == (m_mode == mode_t::blink ? m_loopFrameCount / 4 : m_loopFrameCount / 2))
+		reset();
 }

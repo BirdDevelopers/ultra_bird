@@ -11,7 +11,7 @@ class led_driver
 public:
 	enum class mode_t {flash, blink, slow_blink, dark, invalid};
 
-	led_driver(uint8_t pin_id, uint8_t loop_frame_count = 5);
+	led_driver(uint8_t pin_id, uint8_t loop_frame_count = 30);
 	void set_mode(mode_t new_mode);
 	mode_t mode() const;
 	
