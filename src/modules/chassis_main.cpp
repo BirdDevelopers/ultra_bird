@@ -5,9 +5,12 @@
  *  Author: ultrablox
  */ 
 
+#define F_CPU 16000000UL
+
 #include "led_driver.h"
 #include "brain_module.h"
 #include "drivers/pca9685_driver.h"
+#include "pwm_reader.h"
 #include <avr/io.h>
 #include "chassis.pb.h"
 #include "global.h"
@@ -22,10 +25,10 @@ class chassis_module : public brain_module
 	enum class mode_t {normal, direct, combined, invalid};
 public:
 	chassis_module()
-		:m_ledMode(2, 8)
+		:m_ledMode(led_driver::port_t::B, 1)
 	{
 		register_led(m_ledMode);		
-		set_mode(mode_t::normal);
+		set_mode(mode_t::direct);
 	}
 	
 	error_t init()
@@ -105,10 +108,34 @@ public:
 		return res;
 	}
 	
+	virtual void run_loop() override
+	{
+		while(true)
+		{
+			switch(m_mode)
+			{
+				case mode_t::combined:
+				{
+					if(m_pwmReader.channel_value(0) < 0.5f)
+						break;
+				}
+				case mode_t::direct:
+				{
+					for(unsigned i = 0; i < 6; ++i)
+						m_pwmDriver.set_channel(i, m_pwmReader.channel_value(i));
+					break;
+				}
+				default:
+					break;
+			}
+		}
+	}
+	
 private:
 	led_driver m_ledMode;
 	mode_t m_mode;
 	pwm_driver m_pwmDriver;
+	pwm_reader m_pwmReader;
 };
 	
 int main(void)

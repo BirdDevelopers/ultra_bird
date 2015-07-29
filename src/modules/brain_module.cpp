@@ -10,7 +10,7 @@ ISR(TIMER0_OVF_vect)
 }
 
 brain_module::brain_module()
-	:m_status(status_t::invalid), m_ledGreen(0), m_ledRed(1)
+	:m_status(status_t::invalid), m_ledGreen(led_driver::port_t::C, 6), m_ledRed(led_driver::port_t::C, 7)
 {
 	register_led(m_ledGreen);
 	register_led(m_ledRed);
@@ -29,11 +29,14 @@ void brain_module::run()
 	//led_driver * p_leds[] = {&m_ledGreen, &m_ledRed};
 	
 	timer_driver tmr(this);
+	run_loop();
 	
+}
+
+void brain_module::run_loop()
+{
 	while(true)
 	{
-		//for(unsigned i = 0; i < 2; ++i)
-		//	p_leds[i]->tick();
 	}
 }
 

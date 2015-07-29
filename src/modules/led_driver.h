@@ -10,8 +10,9 @@ class led_driver
 {
 public:
 	enum class mode_t {flash, blink, slow_blink, dark, invalid};
+	enum class port_t {A, B, C, D};
 
-	led_driver(uint8_t pin_id, uint8_t loop_frame_count = 30);
+	led_driver(port_t _port, uint8_t pin_id, uint8_t loop_frame_count = 30);
 	void set_mode(mode_t new_mode);
 	mode_t mode() const;
 	
@@ -23,19 +24,13 @@ public:
 	void process_timer_signal();
 	
 private:
-	void set()
-	{
-		PORTA = set_masked<uint8_t>(PORTA, 0xff, 1 << m_pinId);
-	}
-	
-	void reset()
-	{
-		PORTA = set_masked<uint8_t>(PORTA, 0x00, 1 << m_pinId);
-	}
+	void set();
+	void reset();
 	
 private:
 	uint8_t m_pinId;
 	mode_t m_mode;
+	port_t m_port;
 	
 	unsigned m_blinkCounter;
 	uint8_t m_loopFrameCount;

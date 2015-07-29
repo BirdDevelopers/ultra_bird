@@ -47,6 +47,7 @@ public:
 	void run();
 	virtual void fire() override;
 	void set_status(status_t new_status);
+	virtual void run_loop();
 	
 private:
 	status_t m_status;

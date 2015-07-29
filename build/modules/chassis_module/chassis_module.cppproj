@@ -200,6 +200,14 @@
       <SubType>compile</SubType>
       <Link>pca9685_driver.cpp</Link>
     </Compile>
+	<Compile Include="D:\Projects\ultra_bird\src\modules\pwm_reader.h">
+      <SubType>compile</SubType>
+      <Link>pwm_reader.h</Link>
+    </Compile>
+	<Compile Include="D:\Projects\ultra_bird\src\modules\pwm_reader.cpp">
+      <SubType>compile</SubType>
+      <Link>pwm_reader.cpp</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="drivers" />
