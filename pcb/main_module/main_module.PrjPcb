@@ -39,23 +39,6 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
-DocumentPath=components.CmpLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document2]
 DocumentPath=STM32f1.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -72,7 +55,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=DUCAUHEP
 
-[Document3]
+[Document2]
 DocumentPath=components.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -89,11 +72,11 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JDFMUYAB
 
-[Document4]
+[Document3]
 DocumentPath=main.SchDoc
-AnnotationEnabled=1
+AnnotationEnabled=0
 AnnotateStartValue=1
-AnnotationIndexControlEnabled=1
+AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
 AnnotateOrder=0
@@ -106,11 +89,11 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=KTMAJUYD
 
-[Document5]
+[Document4]
 DocumentPath=pwm_driver.SchDoc
-AnnotationEnabled=1
+AnnotationEnabled=0
 AnnotateStartValue=1
-AnnotationIndexControlEnabled=1
+AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
 AnnotateOrder=3
@@ -123,14 +106,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=VJNICYFJ
 
-[Document6]
+[Document5]
 DocumentPath=radio_high.SchDoc
-AnnotationEnabled=1
+AnnotationEnabled=0
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=5
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -140,14 +123,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=SSBNSXID
 
-[Document7]
+[Document6]
 DocumentPath=radio_low.SchDoc
-AnnotationEnabled=1
+AnnotationEnabled=0
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=6
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -157,11 +140,11 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QKBREQQF
 
-[Document8]
+[Document7]
 DocumentPath=sensors.SchDoc
-AnnotationEnabled=1
+AnnotationEnabled=0
 AnnotateStartValue=1
-AnnotationIndexControlEnabled=1
+AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
 AnnotateOrder=1
@@ -174,7 +157,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=CLAYCIKJ
 
-[Document9]
+[Document8]
 DocumentPath=power_supply.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -191,14 +174,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=YYDCHVWH
 
-[Document10]
+[Document9]
 DocumentPath=memory.SchDoc
-AnnotationEnabled=1
+AnnotationEnabled=0
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=4
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -208,14 +191,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=AJWIDIHE
 
-[Document11]
-DocumentPath=main.PcbDoc
-AnnotationEnabled=1
+[Document10]
+DocumentPath=gps.SchDoc
+AnnotationEnabled=0
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=7
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -223,9 +206,9 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=DIMSQLQS
+DocumentUniqueId=WAKSDGRR
 
-[Document12]
+[Document11]
 DocumentPath=components.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -241,6 +224,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GWLIQPMN
+
+[Document12]
+DocumentPath=main.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=EIXIUHQG
 
 [Configuration1]
 Name=Default Configuration
@@ -1208,7 +1208,7 @@ UpdateVariants=1
 PartTypes=0
 
 [Comparison Options]
-ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
+ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=0|Confirm=0|UseName=-1|InclAllRules=0
 ComparisonOptions1=Kind=Net Class|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
 ComparisonOptions2=Kind=Component Class|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=0|UseName=-1|InclAllRules=0
 ComparisonOptions3=Kind=Rule|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
