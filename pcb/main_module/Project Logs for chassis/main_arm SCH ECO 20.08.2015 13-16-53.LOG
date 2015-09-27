@@ -1,0 +1,5 @@
+Replace Part * JTAG_ARM10 in D:\Projects\ultra_bird\pcb\chassis_module\main_arm.SchDoc with JTAG_ARM10 from components.SchLib
+Replace Part R1 Res2 in D:\Projects\ultra_bird\pcb\chassis_module\main_arm.SchDoc with Res2 from Miscellaneous Devices.IntLib
+Replace Part R1 Res2 in D:\Projects\ultra_bird\pcb\chassis_module\main_arm.SchDoc with Res2 from Miscellaneous Devices.IntLib
+Replace Part R1 Res2 in D:\Projects\ultra_bird\pcb\chassis_module\main_arm.SchDoc with Res2 from Miscellaneous Devices.IntLib
+Replace Part U? STM32F103ZCT6 in D:\Projects\ultra_bird\pcb\chassis_module\main_arm.SchDoc with STM32F103ZCT6 from STM32f1.SchLib

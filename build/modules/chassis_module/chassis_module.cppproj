@@ -156,6 +156,18 @@
       <SubType>compile</SubType>
       <Link>i2c.c</Link>
     </Compile>
+	<Compile Include="D:\Projects\ultra_bird\src\include\avrlib\uart.h">
+      <SubType>compile</SubType>
+      <Link>uart.h</Link>
+    </Compile>
+    <Compile Include="D:\Projects\ultra_bird\src\include\avrlib\uart.c">
+      <SubType>compile</SubType>
+      <Link>uart.c</Link>
+    </Compile>
+	<Compile Include="D:\Projects\ultra_bird\src\include\avrlib\buffer.c">
+      <SubType>compile</SubType>
+      <Link>buffer.c</Link>
+    </Compile>
     <Compile Include="D:\Projects\ultra_bird\src\modules\chassis_main.cpp">
       <SubType>compile</SubType>
       <Link>chassis_main.cpp</Link>

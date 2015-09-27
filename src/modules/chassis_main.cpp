@@ -17,6 +17,7 @@
 
 extern "C" {
 	#include <i2c.h>
+	#include <uart.h>
 }
 
 
@@ -35,6 +36,9 @@ public:
 	{
 		sei();
 		i2cInit();
+		
+		uartInit();
+		uartSetBaudRate(9600);
 		
 		//Initialize PWM driver		
 		auto res = m_pwmDriver.init(0x80);
@@ -128,6 +132,7 @@ public:
 				default:
 					break;
 			}
+			
 		}
 	}
 	
@@ -142,6 +147,14 @@ int main(void)
 {
 	chassis_module chs;
 	chs.init();
+	
+	//for(int i = 0; i < 12; ++i)
+	uartSendByte(132);
+	uartSendByte(142);
+	uartSendByte(167);
+	
+	
+	//chs.set_status(brain_module::status_t::error);
 	
 	chs.run();
 }
